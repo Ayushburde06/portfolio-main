@@ -1,6 +1,6 @@
 import { ArrowUpRight, Github, ChevronRight, ChevronLeft } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const projects = [
   {

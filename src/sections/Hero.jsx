@@ -4,7 +4,6 @@ import {
   ChevronDown,
   Github,
   Linkedin,
-  Twitter,
   Download,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
@@ -30,9 +29,22 @@ const skills = [
   "Serverless",
 ];
 
+const roles = ["Software Engineer", "Python Backend Developer", "Full Stack Developer"];
+
 export const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
-  const roles = ["Software Engineer", "Python Backend Developer", "Full Stack Developer"];
+  const [dots, setDots] = useState([]);
+
+  useEffect(() => {
+    setDots(
+      [...Array(30)].map(() => ({
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
+        animationDelay: `${Math.random() * 5}s`,
+      }))
+    );
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,16 +67,16 @@ export const Hero = () => {
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
+        {dots.map((dot, i) => (
           <div
+            key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${15 + Math.random() * 20
-                }s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              left: dot.left,
+              top: dot.top,
+              animation: dot.animation,
+              animationDelay: dot.animationDelay,
             }}
           />
         ))}
