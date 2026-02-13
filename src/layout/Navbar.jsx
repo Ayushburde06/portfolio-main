@@ -22,18 +22,29 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formattedTime = time.toLocaleTimeString("en-US", {
+    timeZone: "Asia/Kolkata",
+    hour12: true,
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  });
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"
         }  z-50`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
-
-
-
-
-
-
         <a
           href="#"
           className="text-xl font-bold tracking-tight hover:text-primary"
@@ -54,8 +65,18 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* CTA Button */}
-        <div className="hidden md:block">
+        {/* Right Section: Time + CTA */}
+        <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full glass hover:bg-surface/50 transition-colors duration-300">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-xs font-medium font-mono text-muted-foreground w-[100px]">
+              {formattedTime} IST
+            </span>
+          </div>
+
           <a href="#contact">
             <Button size="sm">Contact Me</Button>
           </a>
@@ -84,6 +105,14 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
+
+            <div className="flex items-center gap-2 py-2 text-muted-foreground">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              <span className="font-mono">{formattedTime} IST</span>
+            </div>
 
             <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
               <Button>
