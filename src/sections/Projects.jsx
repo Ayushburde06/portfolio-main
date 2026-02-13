@@ -310,10 +310,12 @@ export const Projects = () => {
 
         {/* View All CTA */}
         <div className="text-center mt-24 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
-          </AnimatedBorderButton>
+          <a href="#projects">
+            <AnimatedBorderButton>
+              View All Projects
+              <ArrowUpRight className="w-5 h-5" />
+            </AnimatedBorderButton>
+          </a>
         </div>
 
 
