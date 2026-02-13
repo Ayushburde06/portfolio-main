@@ -148,12 +148,41 @@ export const Projects = () => {
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${activeProject === idx ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
                     }`}
                 >
-                  <div className="lg:hidden mb-4 rounded-xl overflow-hidden">
+                  <div className="lg:hidden mb-4 rounded-xl overflow-hidden relative group">
                     <img
-                      src={project.image}
+                      src={
+                        activeProject === idx && project.images && project.images.length > 0
+                          ? project.images[currentImageIndex % project.images.length]
+                          : project.image
+                      }
                       alt={project.title}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-48 object-cover transition-transform duration-500"
                     />
+
+                    {/* Mobile Navigation Overlays */}
+                    {activeProject === idx && project.images && project.images.length > 1 && (
+                      <>
+                        <button
+                          onClick={(e) => prevImage(e, project)}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 backdrop-blur-sm transition-all active:scale-90 z-20"
+                          aria-label="Previous image"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={(e) => nextImage(e, project)}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 backdrop-blur-sm transition-all active:scale-90 z-20"
+                          aria-label="Next image"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+
+                        {/* Image Counter Badge */}
+                        <div className="absolute bottom-2 right-2 px-2 py-1 rounded-full bg-black/60 text-white text-[10px] font-medium backdrop-blur-sm">
+                          {(currentImageIndex % project.images.length) + 1} / {project.images.length}
+                        </div>
+                      </>
+                    )}
                   </div>
 
                   <div className="flex items-center gap-3 mb-6">
