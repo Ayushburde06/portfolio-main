@@ -36,7 +36,6 @@ export const Navbar = () => {
     hour12: true,
     hour: "numeric",
     minute: "numeric",
-    second: "numeric",
   });
 
   return (
@@ -44,14 +43,30 @@ export const Navbar = () => {
       className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"
         }  z-50`}
     >
-      <nav className="container mx-auto px-6 flex items-center justify-between">
-        <a
-          href="#"
-          className="text-xl font-bold tracking-tight hover:text-primary"
-        >
-          AB<span className="text-primary">.</span>
-        </a>
-        <div className="hidden md:flex items-center gap-1 mx-auto">
+      <nav className="container mx-auto px-6 flex items-center justify-between relative">
+        {/* Left: Logo + Time (Desktop) */}
+        <div className="flex items-center gap-4">
+          <a
+            href="#"
+            className="text-xl font-bold tracking-tight hover:text-primary"
+          >
+            AB<span className="text-primary">.</span>
+          </a>
+
+          {/* Desktop Time Display */}
+          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full glass hover:bg-surface/50 transition-colors duration-300">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-xs font-medium font-mono text-muted-foreground min-w-[80px]">
+              {formattedTime} IST
+            </span>
+          </div>
+        </div>
+
+        {/* Center: Links (Desktop) */}
+        <div className="hidden md:flex items-center gap-1 absolute left-1/2 transform -translate-x-1/2">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navLinks.map((link, index) => (
               <a
@@ -65,30 +80,34 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Right Section: Time + CTA */}
-        <div className="hidden md:flex items-center gap-6">
-          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full glass hover:bg-surface/50 transition-colors duration-300">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            <span className="text-xs font-medium font-mono text-muted-foreground w-[100px]">
-              {formattedTime} IST
-            </span>
-          </div>
-
-          <a href="#contact">
-            <Button size="sm">Contact Me</Button>
-          </a>
+        {/* Center: Time (Mobile) */}
+        <div className="md:hidden absolute left-1/2 transform -translate-x-1/2 flex items-center gap-2 px-3 py-1.5 rounded-full glass">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
+          <span className="text-xs font-medium font-mono text-muted-foreground">
+            {formattedTime}
+          </span>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 text-foreground cursor-pointer"
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Right Section: CTA + Module Menu */}
+        <div className="flex items-center gap-4">
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <a href="#contact">
+              <Button size="sm">Contact Me</Button>
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 text-foreground cursor-pointer"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -105,14 +124,6 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
-
-            <div className="flex items-center gap-2 py-2 text-muted-foreground">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              <span className="font-mono">{formattedTime} IST</span>
-            </div>
 
             <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
               <Button>
