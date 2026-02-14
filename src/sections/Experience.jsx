@@ -45,8 +45,7 @@ export const Experience = () => {
             className="text-muted-foreground
            animate-fade-in animation-delay-200"
           >
-            A timeline of my professional growth, from curious beginner to
-            senior engineer leading teams and building products at scale.
+            From first lines of code to deploying scalable microservices - documenting my growth through hands-on experience and continuous learning
           </p>
         </div>
 
