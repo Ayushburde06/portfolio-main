@@ -1,0 +1,124 @@
+{
+  "personal": {
+    "name": "Ayushkumar Burde",
+    "email": "ayushburde156@gmail.com",
+    "phone": "+91-8600820291",
+    "location": {
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "country": "India"
+    },
+    "profiles": {
+      "github": "https://github.com/Ayushburde06",
+      "linkedin": "https://www.linkedin.com/in/ayushkumar6"
+    },
+    "summary": "Full-Stack Developer with hands-on experience building AI-powered SaaS applications, backend APIs, and cloud-deployed web platforms. Experienced in React, FastAPI, Python, PostgreSQL, and AWS, with end-to-end ownership of projects from frontend development to backend architecture, AI integration, and production deployment."
+  },
+  "skills": {
+    "languages": ["Python", "TypeScript", "JavaScript", "C++", "SQL"],
+    "backend": ["Django", "Flask", "Node.js", "Express.js", "Hono.js", "RESTful APIs", "Prisma ORM"],
+    "frontend": ["React.js", "Redux", "Tailwind CSS", "HTML5", "CSS3", "Vite"],
+    "databases": ["MySQL", "PostgreSQL", "MongoDB", "SQL Server", "SQLite"],
+    "devops_tools": ["AWS (EC2, S3)", "Git", "Postman", "ReportLab"],
+    "concepts": ["Agile Methodologies", "Full-Stack Development", "Serverless Architecture", "Machine Learning", "Natural Language Processing (NLP)", "UI/UX Design"]
+  },
+  "experience": [
+    {
+      "role": "Software Engineer Intern",
+      "company": "CrystalTech Services Pvt. Ltd.",
+      "location": "Remote",
+      "period": "April 2025 – Present",
+      "highlights": [
+        "Developed and maintained web applications using Python, Django, DRF, and FastAPI for internal business operations and client-facing platforms.",
+        "Designed and integrated secure REST APIs with JWT Authentication and OAuth2 for authentication and role-based access management.",
+        "Built responsive frontend modules using React.js, HTML5, CSS3, and Bootstrap, integrated with backend APIs.",
+        "Worked with PostgreSQL and MySQL for data storage, query optimization, and application performance improvement.",
+        "Implemented asynchronous task processing using Celery for background jobs, notifications, and scheduled tasks.",
+        "Integrated third-party services including Razorpay and Twilio to support payment processing and SMS notifications.",
+        "Used AWS (EC2, S3), Docker, Linux, and Nginx for application deployment and server environment configuration.",
+        "Collaborated with cross-functional teams in an Agile/Scrum environment, participating in code reviews, bug fixes, and feature development using Git and JIRA."
+      ],
+      "technologies": ["Python", "Django", "DRF", "FastAPI", "React.js", "PostgreSQL", "AWS", "Docker"],
+      "current": true
+    }
+  ],
+  "projects": [
+    {
+      "title": "ResumeAI",
+      "subtitle": "AI-Powered Resume Optimization Platform",
+      "github": "https://github.com/Ayushburde06/ResumeAI",
+      "demo": "https://resume-ai-sigma-pied.vercel.app/",
+      "description": "Built a full-stack AI-powered SaaS platform that automates resume optimization for Applicant Tracking Systems (ATS), helping job seekers create tailored resumes, cover letters, and interview preparation in under 30 seconds.",
+      "features": [
+        "Designed an AI-powered document processing pipeline using RAG, LLM orchestration, and GLM models to generate context-aware resume recommendations.",
+        "Developed the application end-to-end with React, FastAPI, Python, PostgreSQL, JWT authentication, and Playwright for high-quality PDF generation.",
+        "Deployed the platform on AWS EC2 behind an Application Load Balancer, providing scalable backend services and secure API access."
+      ],
+      "tags": ["React", "TypeScript", "FastAPI", "Python", "PostgreSQL", "SQLAlchemy", "RAG", "GLM LLM", "Playwright", "AWS EC2", "Application Load Balancer", "JWT", "Tailwind CSS"]
+    },
+    {
+      "title": "Notes App",
+      "subtitle": "MERN Stack Note Application",
+      "github": "https://github.com/Ayushburde06/Notes-App-main",
+      "demo": "https://notes-app-main-aqv5.onrender.com/",
+      "description": "A full-stack note-taking application built with the MERN stack featuring real-time operations, user authentication, and advanced note management capabilities.",
+      "features": [
+        "CRUD Operations – Create, edit, delete, and manage notes seamlessly",
+        "Pin Important Notes – Keep priority notes at the top for quick access",
+        "Search & Filter – Instantly find specific notes with smart search functionality",
+        "JWT Authentication – Secure user login and session management",
+        "Redux State Management – Efficient and predictable application state handling",
+        "Real-time Updates – Smooth UI updates without page refresh",
+        "Fully Responsive – Optimized for desktop, tablet, and mobile devices"
+      ],
+      "tags": ["React.js", "Redux", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT"]
+    },
+    {
+      "title": "Blogging Platform",
+      "subtitle": "MERN Stack Blog Application",
+      "github": "https://github.com/Ayushburde06/Blog-App",
+      "demo": "Live coming soon",
+      "description": "A full-stack blogging platform inspired by Medium, featuring blog creation, user authentication, and a clean reading experience built with modern web technologies.",
+      "features": [
+        "Blog Management – Create, edit, and publish posts with rich text formatting",
+        "User Authentication – Secure signup/login with session management",
+        "Blog Discovery – Browse and search published articles",
+        "User Profiles – Personalized author pages",
+        "Fully Responsive – Optimized for all devices"
+      ],
+      "tags": ["React", "Vite", "Tailwind CSS", "TypeScript", "Hono.js", "Prisma ORM"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Computer Applications",
+      "institution": "Tulsiramji Gaikwad Patil College of Engineering and Technology",
+      "period": "July 2023 — July 2025",
+      "cgpa": "6.76",
+      "location": "Nagpur, Maharashtra",
+      "current": true,
+      "achievements": [
+        "Participated in UI/UX design competitions",
+        "Published research as a co-author"
+      ]
+    },
+    {
+      "degree": "Bachelor of Computer Applications",
+      "institution": "City Premier College (RTM Nagpur University)",
+      "period": "July 2019 — July 2022",
+      "cgpa": "8.45",
+      "location": "Nagpur, Maharashtra",
+      "current": false,
+      "description": "Strong foundation in software development principles, data structures, and programming languages like C++.",
+      "achievements": [
+        "Placement Cell Coordinator",
+        "Participated in Programming Competitions",
+        "Student Body Treasurer"
+      ]
+    }
+  ],
+  "certifications": [
+    "Complete 2025 Python Bootcamp From Scratch | Udemy",
+    "Django Masterclass | Udemy"
+  ]
+}
